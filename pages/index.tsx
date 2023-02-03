@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-slate-500 px-20 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center">
-      <div className="bg-slate-100 sm:bg-red-400 2xl:bg-indigo-400 p-10 rounded-3xl shadow-xl flex flex-col justify-between">
+    <div className="dark bg-slate-500 px-20 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center">
+      <div className="bg-slate-100 dark:text-white dark:bg-black sm:bg-red-400 2xl:bg-indigo-400 p-10 rounded-3xl shadow-xl flex flex-col justify-between">
         <span className="font-bold text-2xl">Select Item</span>
         <ul>
           {[1, 2, 3, 4, 5].map((i) => (
@@ -31,7 +31,7 @@ const Home: NextPage = () => {
           <span>Total</span>
           <span className="font-semibold">$38</span>
         </div>
-        <button className="mt-5 bg-blue-500 text-white p-2 mx-auto block text-center rounded-lg w-3/4 hover:bg-teal-500 hover:text-black active:bg-yellow-400 focus:border-4 border-blue-900">
+        <button className="mt-5 bg-blue-500 text-[#fff] p-2 mx-auto block text-center rounded-lg w-3/4 dark:hover:bg-black hover:bg-teal-500 dark:hover:text-white hover:text-black active:bg-yellow-400 focus:border-4 border-blue-900">
           Checkout
         </button>
       </div>
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             <span className="shadow-lg p-2 rounded-md">💗</span>
           </div>
         </div>
-        <div className="bg-red-300 h-56 mb-5"></div>
+        <div className="bg-red-300 h-56 mb-5 bg-[url('/vercel.svg')]"></div>
         <div className="flex flex-col">
           <span className="text-lg font-semibold">Swoon Lounge</span>
           <span className="text-gray-500">Chair</span>
