@@ -13,5 +13,6 @@ module.exports = {
   },
   darkMode: "class",
   // "media" : 다크모드 설정이 로컬의 환경설정을 따라감
-  plugins: [],
+
+  plugins: [require("@tailwindcss/forms")],
 };

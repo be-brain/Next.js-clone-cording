@@ -1,103 +1,89 @@
 import type { NextPage } from "next";
+import FloatingButton from "./components/floating-button";
+import Layout from "./components/layout";
 
 const Home: NextPage = () => {
-  return (
-    <div className="dark bg-slate-500 px-20 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center">
-      <div className="bg-slate-100 dark:text-white dark:bg-black sm:bg-red-400 2xl:bg-indigo-400 p-10 rounded-3xl shadow-xl flex flex-col justify-between">
-        <span className="font-bold text-2xl">Select Item</span>
-        <ul>
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className="flex justify-between my-2  first:bg-blue-100 last:bg-blue-100 only:bg-red-200 odd:bg-yellow-100 even:bg-green-200"
-            >
-              <span className="text-gray-600">Grey Chair</span>
-              <span className="font-semibold">$18</span>
+    return (
+        <Layout title="Home" hasTabBar>
+            <div className="flex flex-col space-y-5">
+                {[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1].map((_, i) => (
+                    <div
+                        key={i}
+                        className="flex border-b pb-4 cursor-pointer justify-between"
+                    >
+                        <div className="flex space-x-4">
+                            <div className="w-20 h-20 bg-gray-300" />
+                            <div className="pt-2 flex flex-col">
+                                <h3 className="text-sm font-medium text-gray-900">
+                                    New iPhone 14
+                                </h3>
+                                <span className="text-sm text-gray-500">
+                                    Black
+                                </span>
+                                <span className="font-medium mt-1 text-gray-900">
+                                    $95
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex items-end justify-end space-x-10">
+                            <div className="flex items-center text-sm text-gray-600 space-x-0.5">
+                                <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                    ></path>
+                                </svg>
+                                <span>1</span>
+                            </div>
+                            <div className="flex items-center text-sm text-gray-600 space-x-0.5">
+                                <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                                    ></path>
+                                </svg>
+                                <span>1</span>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+                <button className="fixed bottom-24 right-5 hover:bg-purple-500 cursor-pointer transition-colors bg-purple-400 rounded-full shadow-lg p-3 text-white">
+                    <svg
+                        className="h-6 w-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                        />
+                    </svg>
+                </button>
+                {/* <FloatingButton></FloatingButton> */}
             </div>
-          ))}
-        </ul>
-        <ul>
-          {["a", "b", "c", ""].map((friend, i) => (
-            <li
-              key={i}
-              className="flex justify-between my-2 empty:hidden bg-purple-200 py-2"
-            >
-              <span className="text-gray-600">{friend}</span>
-              {/* <span className="font-semibold">$20</span> */}
-            </li>
-          ))}
-        </ul>
-        <div className="flex justify-between mt-2 pt-2 border-t-4 border-dashed">
-          <span>Total</span>
-          <span className="font-semibold">$38</span>
-        </div>
-        <button className="mt-5 bg-blue-500 text-[#fff] p-2 mx-auto block text-center rounded-lg w-3/4 dark:hover:bg-black hover:bg-teal-500 dark:hover:text-white hover:text-black active:bg-yellow-400 focus:border-4 border-blue-900">
-          Checkout
-        </button>
-      </div>
-      <div className="bg-slate-100 rounded-3xl shadow-xl overflow-hidden group">
-        <div className="bg-blue-500 p-6 pb-14 portrait:bg-cyan-500 landscape:bg-teal-400">
-          <span className="text-white text-2xl">Profile</span>
-        </div>
-        {/* landscape : 모바일가로화면 portrait : 모바일세로화면 */}
-        <div className="rounded-3xl p-6 relative -top-5 bg-slate-100">
-          <div className="flex justify-between items-end relative -top-16">
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-600">Orders</span>
-              <span className="font-semibold">340</span>
-            </div>
-            <div className="bg-gray-300 h-24 w-24 rounded-full group-hover:bg-red-500 transition-colors"></div>
-            <div className="flex flex-col items-center">
-              <span className="text-sm text-gray-600">Spent</span>
-              <span className="font-semibold">$2,310</span>
-            </div>
-          </div>
-          <div className="flex flex-col items-center relative -mt-10 -mb-5">
-            <span className="text-lg font-medium">Tony Molloy</span>
-            <span className="text-sm text-gray-600">New York, USA</span>
-          </div>
-        </div>
-      </div>
-      <div className="bg-slate-100 p-6 rounded-3xl shadow-xl group lg:col-span-2 xl:col-span-1">
-        <div className="flex justify-between items-center mb-5">
-          <span>⬅</span>
-          <div className="space-x-3">
-            {/* space는 margin left, right를 알아서 계산해준다 */}
-            <span>⭐ 4.9</span>
-            <span className="shadow-lg p-2 rounded-md">💗</span>
-          </div>
-        </div>
-        <div className="bg-red-300 h-56 mb-5 bg-[url('/vercel.svg')]"></div>
-        <div className="flex flex-col">
-          <span className="text-lg font-semibold">Swoon Lounge</span>
-          <span className="text-gray-500">Chair</span>
-          <div className="flex justify-between mt-3 mb-5 items-center">
-            <div className="space-x-2">
-              <button className="w-5 h-5 rounded-full bg-red-400 focus:ring-2 ring-offset-2 ring-red-400 ring-opacity-50 transition"></button>
-              <button className="w-5 h-5 rounded-full bg-pink-800 focus:ring-2 ring-offset-2"></button>
-              <button className="w-5 h-5 rounded-full bg-purple-500 focus:ring-2 ring-offset-2"></button>
-            </div>
-            <div className="flex items-center space-x-5">
-              <button className="p-1.5 bg-blue-200 rounded-lg flex justify-center items-center aspect-square w-8 font-medium text-xl text-gray-600">
-                -
-              </button>
-              <span>1</span>
-              <button className="p-1.5 bg-blue-200 rounded-lg flex justify-center items-center aspect-square w-8 font-medium text-xl text-gray-600">
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-between items-center">
-          <span className="font-bold text-2xl">$450</span>
-          <button className="bg-blue-500 rounded-lg text-white px-8 py-2">
-            Add to cart
-          </button>
-        </div>
-      </div>
-      {/* lg:col-span-2 = 칸(열) 2개 차지하게 만들기 */}
-    </div>
-  );
+        </Layout>
+    );
 };
 
 export default Home;
