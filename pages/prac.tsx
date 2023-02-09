@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 
-const Prac: NextPage = () => {
+const Prac: NextPage = (props) => {
     return (
-        <div className="dark bg-slate-500 px-20 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center">
+        <div className="/* dark */ bg-slate-500 px-20 py-20 grid gap-10 lg:grid-cols-2 xl:grid-cols-3 min-h-screen xl:place-content-center">
             <div className="bg-slate-100 dark:text-white dark:bg-black sm:bg-red-400 2xl:bg-indigo-400 p-10 rounded-3xl shadow-xl flex flex-col justify-between">
                 <span className="font-bold text-2xl">Select Item</span>
                 <ul>
