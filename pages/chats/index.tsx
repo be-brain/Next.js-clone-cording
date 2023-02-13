@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Layout from "../components/layout";
 
-const Chats: NextPage = () => {
+const Chats: NextPage = (props) => {
     return (
         <Layout title="Chats" hasTabBar>
             <div className="py-10 divide-y-[1px] ">
